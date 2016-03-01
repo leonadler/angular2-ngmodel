@@ -15,7 +15,9 @@
     "email": "git@leon-adler.com"
   },
   "scripts": {
-    "install": "typings install --no-insight"
+    "build": "gulp build",
+    "install": "typings install --no-insight",
+    "watch": "gulp watch"
   },
   "license": "MIT",
   "devDependencies": {
@@ -23,13 +25,10 @@
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-tslint": "^4.3.1",
     "gulp-typescript": "^2.12.0",
     "gulp-util": "^3.0.7",
-    "ts-loader": "^0.8.0",
     "tslint-eslint-rules": "^1.0.1",
     "tslint-stylish": "^2.1.0-beta",
     "typescript": ">=1.7.5 <1.8.0",
@@ -42,11 +41,8 @@
     "angular2": "2.0.0-beta.6",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.13",
-    "jquery": "^2.2.0",
-    "materialize-css": "^0.97.5",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.0",
-    "systemjs": "^0.19.23",
     "zone.js": "0.5.14"
   },
   "engines": {

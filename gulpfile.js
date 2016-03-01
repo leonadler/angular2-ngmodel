@@ -7,7 +7,6 @@ const del = require('del');
 const gulp = require('gulp');
 const gulpTypescript = require('gulp-typescript');
 const gutil = require('gulp-util');
-const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const sourceStream = require('vinyl-source-stream');
 const tslint = require('gulp-tslint');
