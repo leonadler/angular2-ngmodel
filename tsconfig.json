@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "isolatedModules": false,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "rootDir": "src",
+    "outDir": "lib"
+  },
+  "exclude": [
+      "build",
+      "lib",
+      "node_modules",
+      "typings/main",
+      "typings/main.d.ts",
+      "gulpfile.js"
+  ]
+}

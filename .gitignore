@@ -1,0 +1,17 @@
+/build
+/lib
+/node_modules
+/typings
+
+# Temporary files
+logs
+*.log
+npm-debug.log*
+pids
+*.pid
+*.seed
+lib-cov
+coverage
+.grunt
+.lock-wscript
+.idea

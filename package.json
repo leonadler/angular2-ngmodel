@@ -1,0 +1,55 @@
+{
+  "name": "angular2-ngmodel",
+  "version": "0.0.1",
+  "description": "Angular2 ngModel example",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leonadler/angular2-ngmodel"
+  },
+  "bugs": {
+    "url": "https://github.com/leonadler/angular2-ngmodel/issues"
+  },
+  "author": {
+    "name": "Leon Adler",
+    "email": "git@leon-adler.com"
+  },
+  "scripts": {
+    "install": "typings install --no-insight"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^4.3.1",
+    "gulp-typescript": "^2.12.0",
+    "gulp-util": "^3.0.7",
+    "ts-loader": "^0.8.0",
+    "tslint-eslint-rules": "^1.0.1",
+    "tslint-stylish": "^2.1.0-beta",
+    "typescript": ">=1.7.5 <1.8.0",
+    "typings": "^0.6.8",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "angular2": "2.0.0-beta.6",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.13",
+    "jquery": "^2.2.0",
+    "materialize-css": "^0.97.5",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "systemjs": "^0.19.23",
+    "zone.js": "0.5.14"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}
