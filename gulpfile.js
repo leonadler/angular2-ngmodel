@@ -78,6 +78,17 @@ gulp.task('bundle', ['typescript'], () => {
     );
 });
 
+gulp.task('lint', () => {
+    return (
+        gulp.src('src/**/*.ts', { base: '.' })
+        .pipe(tslint())
+        .pipe(tslint.report(tslintStylish, {
+            emitError: true,
+            summarizeFailureOutput: true
+        }))
+    );
+});
+
 gulp.task('staticfiles', () => {
     return (
         gulp.src(['src/**', '!**/*.ts', '!**/*.js'])
