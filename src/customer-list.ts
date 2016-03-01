@@ -1,18 +1,17 @@
 import {Component} from 'angular2/core';
 import {Customer, exampleCustomers} from './customer';
-import {CustomerEditor} from './customer-editor';
+import {CustomerEditor, CustomerValueAccessor} from './customer-editor';
 
 @Component({
     selector: 'customer-list',
-    // TODO: [(ngModel)]="customer"
     template: `
         <div class="customer-list">
             <customer-editor
-                *ngFor="#customer of customers"
-                [customer]="customer">
+                *ngFor="#customer of customers; #i = index"
+                [(ngModel)]="customers[i]">
             </customer-editor>
         </div>`,
-    directives: [CustomerEditor]
+    directives: [CustomerEditor, CustomerValueAccessor]
 })
 export class CustomerList {
     private customers: Customer[];
