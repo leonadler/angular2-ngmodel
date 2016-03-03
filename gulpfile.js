@@ -56,12 +56,13 @@ gulp.task('typescript', () => {
 let bundler;
 gulp.task('bundle', ['typescript'], () => {
     if (!bundler) {
+        const watching = process.argv.indexOf('watch') > 1;
         bundler = browserify({
             entries: ['lib/app.js'],
             debug: true,
             cache: {},
             packageCache: {},
-            plugin: [watchify]
+            plugin: watching ? [watchify] : []
         });
     }
 
