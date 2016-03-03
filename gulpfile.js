@@ -25,7 +25,7 @@ gulp.task('clean', () => {
     ]);
 });
 
-gulp.task('build', ['typescript', 'bundle', 'staticfiles', 'vendorfiles']);
+gulp.task('build', ['staticfiles', 'vendorfiles', 'bundle']);
 
 let tsProject;
 gulp.task('typescript', () => {
@@ -54,15 +54,15 @@ gulp.task('typescript', () => {
 });
 
 let bundler;
+let watchForChanges = false;
 gulp.task('bundle', ['typescript'], () => {
     if (!bundler) {
-        const watching = process.argv.indexOf('watch') > 1;
         bundler = browserify({
             entries: ['lib/app.js'],
             debug: true,
             cache: {},
             packageCache: {},
-            plugin: watching ? [watchify] : []
+            plugin: watchForChanges ? [watchify] : []
         });
     }
 
@@ -113,7 +113,9 @@ gulp.task('vendorfiles', () => {
     );
 });
 
-gulp.task('watch', ['build'], () => {
-    gulp.watch(['src/**/*.ts'], ['bundle']);
+gulp.task('watch', ['staticfiles', 'vendorfiles'], (runForever) => {
+    watchForChanges = true;
+    gulp.start('bundle');
     gulp.watch(['src/**/*.html'], ['staticfiles']);
+    gulp.watch(['src/**/*.ts'], ['bundle']);
 });
