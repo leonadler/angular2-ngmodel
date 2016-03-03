@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {Customer, exampleCustomers} from './customer';
-import {CustomerEditor, CustomerValueAccessor} from './customer-editor';
+import {CustomerEditor} from './customer-editor';
 
 @Component({
     selector: 'customer-list',
@@ -18,7 +18,7 @@ import {CustomerEditor, CustomerValueAccessor} from './customer-editor';
                 [(ngModel)]="customers[i]">
             </customer-editor>
         </div>`,
-    directives: [CustomerEditor, CustomerValueAccessor]
+    directives: [CustomerEditor]
 })
 export class CustomerList {
     private customers: Customer[];

@@ -1,7 +1,14 @@
-import {Component, Input} from 'angular2/core';
+import {Component, Input, Provider, forwardRef} from 'angular2/core';
+import {NG_VALUE_ACCESSOR, ControlValueAccessor} from 'angular2/common';
+import {CONST_EXPR} from 'angular2/src/facade/lang';
 import {Customer} from './customer';
-import {CustomerValueAccessor} from './customer-value-accessor';
-export {CustomerValueAccessor} from './customer-value-accessor';
+
+const CUSTOMER_VALUE_ACCESSOR: Provider = CONST_EXPR(
+    new Provider(NG_VALUE_ACCESSOR, {
+        useExisting: forwardRef(() => CustomerEditor),
+        multi: true
+    })
+);
 
 @Component({
     selector: 'customer-editor',
@@ -38,13 +45,23 @@ export {CustomerValueAccessor} from './customer-value-accessor';
             </blockquote>
         </div>
     `,
-    directives: [CustomerValueAccessor]
+    providers: [CUSTOMER_VALUE_ACCESSOR]
 })
-export class CustomerEditor {
-    @Input() customer: Customer;
+export class CustomerEditor implements ControlValueAccessor {
+    customer: Customer;
 
-    setCustomer(customer: Customer): void {
+    onChange: Function = () => {};
+    onTouched: Function = () => {};
+    writeValue(customer: any): void {
         this.customer = customer;
+    }
+
+    registerOnChange(fn: Function): void {
+        this.onChange = fn;
+    }
+
+    registerOnTouched(fn: Function): void {
+        this.onTouched = fn;
     }
 }
 
