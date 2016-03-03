@@ -7,29 +7,34 @@ export {CustomerValueAccessor} from './customer-value-accessor';
     selector: 'customer-editor',
     template: `
         <div>
-            <p>Customer editor here</p>
+            <p>Customer editor for {{customer?.name}}:</p>
             <blockquote *ngIf="customer">
-                Name: {{customer.name}}<br>
-                Company: {{customer.company}}<br>
-                <div *ngIf="customer.phoneNumbers.length > 0">
-                    Phone numbers:<br />
-                    <ul>
-                        <li *ngFor="#phone of customer.phoneNumbers">
-                            Number: {{phone}}
-                        </li>
-                    </ul>
+                Name: <input [(ngModel)]="customer.name"><br>
+                Company: <input [(ngModel)]="customer.company"><br>
+
+                <div *ngIf="customer.phoneNumbers?.length >= 2">
+                    Phone numbers:
                 </div>
-                <div *ngIf="customer.addresses.length > 0">
-                    Addresses:<br />
-                    <ul>
-                        <li *ngFor="#address of customer.addresses">
-                            Address:<br>
-                            {{address.street}}<br>
-                            {{address.zipcode}} {{address.city}}<br>
-                            {{address.country}}
-                        </li>
-                    </ul>
+                <ul>
+                    <li *ngFor="#phone of customer.phoneNumbers; #n = index">
+                        Phone: <input
+                            [(ngModel)]="customer.phoneNumbers[n]"
+                            placeholder="Phone No.">
+                    </li>
+                </ul>
+
+                <div *ngIf="customer.adresses?.length >= 2">
+                    Addresses:
                 </div>
+                <ul>
+                    <li *ngFor="#address of customer.addresses; #n = index">
+                        <input [(ngModel)]="customer.addresses[n].street"><br>
+                        <input [(ngModel)]="customer.addresses[n].zipcode" size="4">
+                            <input [(ngModel)]="customer.addresses[n].city" size="11"><br>
+                        <input [(ngModel)]="customer.addresses[n].country">
+                    </li>
+                </ul>
+
             </blockquote>
         </div>
     `,
