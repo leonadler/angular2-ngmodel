@@ -12,23 +12,25 @@ export interface Customer {
 
 export const exampleCustomers: Customer[] = [
     {
-        name: 'John Doe',
-        company: 'Microsoft Corp.',
+        name: 'Barack O.',
+        company: 'United States Government',
         phoneNumbers: [
-            '(+49)-1234567890',
-            '+99-0-1234567890'
+            '+1 202-456-1111',
+            '+1 202-456-1414',
+            '+1 202-456-6213',
+            '+1 202-456-2121'
         ],
         addresses: [
             {
-                city: 'Kopenhagen',
-                country: 'Denmark',
-                street: 'Examplestreet 1',
-                zipcode: '1688'
+                city: 'Washington DC',
+                country: 'USA',
+                street: '1600 Pennsylvania Ave NW',
+                zipcode: '20500'
             }
         ]
     },
     {
-        name: 'Angela Merkel',
+        name: 'Angela M.',
         company: 'Bundesrepublik Deutschland',
         phoneNumbers: [
             '+49 30 22732152'
