@@ -35,6 +35,18 @@ How can this data be passed to the editor component like this?:
 
 The solution lies in the `ControlValueAccessor` interface, which this repo showcases. 
 
+## How to run the example
+
+1. Clone the repository
+2. `$ npm install`
+3. `$ npm run build`
+4. Serve the /build/ directory, e.g. with [http-server](https://www.npmjs.com/package/http-server):  
+   `$ npm install -g http-server`  
+   `$ cd build`  
+   `$ hs`  
+5. Open the URL in your browser (http://127.0.0.1:8080/)
+
+
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
