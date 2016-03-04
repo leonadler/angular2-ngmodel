@@ -14,7 +14,7 @@ const CUSTOMER_VALUE_ACCESSOR: Provider = CONST_EXPR(
     selector: 'customer-editor',
     template: `
         <div>
-            <p>Customer editor for {{customer?.name}}:</p>
+            <p>Edit {{customer.name}}:</p>
             <blockquote *ngIf="customer">
                 Name: <input [(ngModel)]="customer.name"><br>
                 Company: <input [(ngModel)]="customer.company"><br>
@@ -24,8 +24,8 @@ const CUSTOMER_VALUE_ACCESSOR: Provider = CONST_EXPR(
                 </div>
                 <ul>
                     <li *ngFor="#phone of customer.phoneNumbers; #n = index">
-                        Phone: <input
-                            [(ngModel)]="customer.phoneNumbers[n]"
+                        Phone: <input [value]="customer.phoneNumbers[n]"
+                            (change)="customer.phoneNumbers[n] = $event.target.value"
                             placeholder="Phone No.">
                     </li>
                 </ul>
