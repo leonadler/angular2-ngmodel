@@ -25,8 +25,8 @@ import {RadioButton} from './radiobutton';
     directives: [RadioButton]
 })
 export class RadioButtonTest {
+    private static lastID: number = 0;
     private inputName: string;
-        private selectedColor: any;
     private colors: any[] = [
         {
             id: 'red',
@@ -49,7 +49,6 @@ export class RadioButtonTest {
             hex: '00cccc'
         }
     ];
-    private static lastID: number = 0;
 
     constructor() {
          this.inputName = 'radio-button-test-' + (++RadioButtonTest.lastID);
